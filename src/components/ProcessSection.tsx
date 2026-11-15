@@ -1,0 +1,54 @@
+import React from 'react';
+import { PROCESS_STEPS, buildWhatsAppUrl } from '../data/siteConfig';
+import { WhatsAppIcon } from './WhatsAppIcon';
+
+export const ProcessSection: React.FC = () => {
+  return (
+    <section
+      id="como-funciona"
+      className="py-16 lg:py-20 bg-[#0B2545] text-white border-b-4 border-yellow-400"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+              02. Como Funciona a Locação
+            </h2>
+            <p className="text-base text-blue-100 mt-2.5 leading-relaxed">
+              Processo direto do primeiro contato no WhatsApp até a emissão do comprovante de
+              destinação final em aterro licenciado.
+            </p>
+          </div>
+          <a
+            href={buildWhatsAppUrl(
+              'Olá! Vi como funciona a locação e gostaria de agendar uma caçamba pelo WhatsApp.'
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-[#0B2545] text-sm font-extrabold transition-colors whitespace-nowrap shrink-0"
+          >
+            <WhatsAppIcon className="w-4 h-4 shrink-0" />
+            <span>Agendar Entrega no WhatsApp</span>
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {PROCESS_STEPS.map((step) => (
+            <div
+              key={step.number}
+              className="border-t-2 border-yellow-400/80 pt-5 flex flex-col justify-between"
+            >
+              <div>
+                <p className="text-base font-mono font-bold text-yellow-400 mb-2">
+                  {step.number}
+                </p>
+                <h3 className="text-lg font-bold text-white tracking-tight">{step.title}</h3>
+                <p className="text-sm text-blue-100 leading-relaxed mt-2.5">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
