@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DUMPSTER_MODELS, buildWhatsAppUrl } from '../data/siteConfig';
+import { DUMPSTER_MODELS, GALLERY_IMAGES, buildWhatsAppUrl } from '../data/siteConfig';
 import { ImageWithFallback } from './ImageWithFallback';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
@@ -53,7 +53,7 @@ export const DumpsterModels: React.FC = () => {
         {/* Asymmetric Featured Bento Showcase (7 cols image + 5 cols specs) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch mb-8">
           <div className="lg:col-span-7 rounded-2xl overflow-hidden border border-slate-200 bg-white flex flex-col">
-            <div className="aspect-[16/10] w-full overflow-hidden bg-slate-200">
+            <div className="aspect-[4/3] w-full overflow-hidden bg-slate-200">
               <ImageWithFallback
                 src={activeModel.imageSrc}
                 alt={activeModel.imageAlt}
@@ -78,19 +78,19 @@ export const DumpsterModels: React.FC = () => {
               </p>
 
               <div className="mt-6 pt-5 border-t border-slate-200 space-y-3 text-sm">
-                <div className="flex items-center justify-between gap-4">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-slate-500">Dimensões aproximadas</span>
                   <span className="font-mono font-semibold text-[#0B2545] tabular-nums">
                     {activeModel.dimensions}
                   </span>
                 </div>
-                <div className="flex items-center justify-between gap-4">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-slate-500">Capacidade estimada</span>
-                  <span className="font-medium text-slate-900 text-right">
+                  <span className="font-medium text-slate-900 sm:text-right">
                     {activeModel.capacityBags}
                   </span>
                 </div>
-                <div className="flex items-center justify-between gap-4">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-slate-500">Sinalização</span>
                   <span className="font-medium text-slate-900">Faixas refletivas ABNT</span>
                 </div>
@@ -101,7 +101,7 @@ export const DumpsterModels: React.FC = () => {
               href={buildWhatsAppUrl(activeModel.whatsappMessage)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center justify-center gap-2.5 w-full px-6 py-4 rounded-xl bg-[#0B2545] hover:bg-[#13315C] text-white text-base font-bold transition-colors whitespace-nowrap"
+              className="mt-8 inline-flex items-center justify-center gap-2 w-full px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-[#0B2545] hover:bg-[#13315C] text-white text-sm sm:text-base font-bold transition-colors whitespace-nowrap"
             >
               <WhatsAppIcon className="w-5 h-5 text-yellow-400 shrink-0" />
               <span>Solicitar {activeModel.volume} no WhatsApp</span>
@@ -151,6 +151,52 @@ export const DumpsterModels: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* Real Field Operations Photo Gallery */}
+        <div className="mt-14 pt-10 border-t border-slate-200">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+            <div>
+              <h3 className="text-lg sm:text-xl font-extrabold text-[#0B2545] tracking-tight">
+                Fotos Reais de Caçambas em Obra
+              </h3>
+              <p className="text-sm text-slate-600 mt-1">
+                Atendimento em reformas residenciais, canteiros urbanos e obras comerciais.
+              </p>
+            </div>
+            <a
+              href={buildWhatsAppUrl(
+                'Olá, Caçambas Brasil! Vi as fotos das caçambas em obra e gostaria de fazer um orçamento.'
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0B2545] hover:text-blue-800 underline underline-offset-4 whitespace-nowrap w-fit shrink-0"
+            >
+              <WhatsAppIcon className="w-4 h-4 text-emerald-700 shrink-0" />
+              <span>Pedir caçamba igual pelo WhatsApp</span>
+            </a>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+            {GALLERY_IMAGES.map((photo) => (
+              <figure
+                key={photo.src}
+                className="group relative aspect-square rounded-xl overflow-hidden border border-slate-200 bg-white"
+              >
+                <ImageWithFallback
+                  src={photo.src}
+                  alt={photo.alt}
+                  fallbackTitle={photo.title}
+                  className="w-full h-full object-cover transition-transform duration-200 group-hover:scale-[1.03]"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#071830]/90 via-[#071830]/40 to-transparent px-3 py-2.5">
+                  <span className="block text-[11px] font-semibold text-white truncate">
+                    {photo.title}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </div>
     </section>

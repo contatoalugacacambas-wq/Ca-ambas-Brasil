@@ -61,7 +61,7 @@ export const WhatsAppQuoteBuilder: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-2xl overflow-hidden border border-slate-200 grid grid-cols-1 lg:grid-cols-12">
           {/* Left Royal Blue Summary & Contact Panel */}
-          <div className="lg:col-span-5 bg-[#0B2545] text-white p-6 sm:p-10 flex flex-col justify-between">
+          <div className="lg:col-span-5 bg-[#0B2545] text-white p-5 sm:p-8 lg:p-10 flex flex-col justify-between min-w-0">
             <div>
               <p className="text-xs font-medium text-yellow-300 mb-2">
                 Orçamento Transparente · Atendimento Imediato
@@ -105,12 +105,12 @@ export const WhatsAppQuoteBuilder: React.FC = () => {
           </div>
 
           {/* Right Interactive Builder Panel */}
-          <div className="lg:col-span-7 bg-[#F4F7FB] p-6 sm:p-10">
-            <div className="flex items-center gap-1 p-1 bg-white border border-slate-200 rounded-xl mb-6 w-fit">
+          <div className="lg:col-span-7 bg-[#F4F7FB] p-5 sm:p-8 lg:p-10 min-w-0">
+            <div className="grid grid-cols-2 sm:inline-flex items-center gap-1 p-1 bg-white border border-slate-200 rounded-xl mb-6 w-full sm:w-fit">
               <button
                 type="button"
                 onClick={() => setActiveTab('whatsapp')}
-                className={`px-4 py-2 text-xs sm:text-sm font-bold rounded-lg transition-colors whitespace-nowrap ${
+                className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-bold rounded-lg transition-colors whitespace-nowrap truncate ${
                   activeTab === 'whatsapp'
                     ? 'bg-[#0B2545] text-yellow-400'
                     : 'text-slate-600 hover:text-[#0B2545]'
@@ -125,7 +125,7 @@ export const WhatsAppQuoteBuilder: React.FC = () => {
                   setFormSubmitted(false);
                   setFormError(null);
                 }}
-                className={`px-4 py-2 text-xs sm:text-sm font-bold rounded-lg transition-colors whitespace-nowrap ${
+                className={`px-3 sm:px-4 py-2 text-xs sm:text-sm font-bold rounded-lg transition-colors whitespace-nowrap truncate ${
                   activeTab === 'email'
                     ? 'bg-[#0B2545] text-yellow-400'
                     : 'text-slate-600 hover:text-[#0B2545]'
@@ -231,7 +231,7 @@ export const WhatsAppQuoteBuilder: React.FC = () => {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2.5 w-full px-6 py-4 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-[#0B2545] text-base font-extrabold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B2545]"
+                  className="inline-flex items-center justify-center gap-2 w-full px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-[#0B2545] text-sm sm:text-base font-extrabold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0B2545]"
                 >
                   <WhatsAppIcon className="w-5 h-5 shrink-0" />
                   <span>Enviar Pedido no WhatsApp Agora</span>

@@ -20,7 +20,7 @@ export default function App() {
   const [activeLegalDoc, setActiveLegalDoc] = useState<LegalDocType>(null);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F4F7FB] text-slate-900">
+    <div className="min-h-screen flex flex-col bg-[#F4F7FB] text-slate-900 overflow-x-clip">
       <Header />
       <main className="flex-1">
         <HeroSection />

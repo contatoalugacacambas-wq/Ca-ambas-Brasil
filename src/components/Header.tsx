@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 bg-[#0B2545] border-b border-blue-900/80 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3 sm:gap-6 lg:gap-8">
         {/* Zone 1: Single-line Brand Wordmark */}
         <a
           href="#topo"
@@ -46,15 +46,16 @@ export const Header: React.FC = () => {
         </nav>
 
         {/* Zone 3: 1 Primary CTA + Mobile Menu Toggle */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <a
             href={headerWhatsAppUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-[#0B2545] text-sm font-extrabold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-[#0B2545] text-xs sm:text-sm font-extrabold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
           >
             <WhatsAppIcon className="w-4 h-4 shrink-0" />
-            <span>Orçamento WhatsApp</span>
+            <span className="sm:hidden">WhatsApp</span>
+            <span className="hidden sm:inline">Orçamento WhatsApp</span>
           </a>
 
           <button

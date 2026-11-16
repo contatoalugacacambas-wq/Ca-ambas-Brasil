@@ -1,14 +1,65 @@
-import heroTruckImg from '../assets/images/hero_cacamba_truck_1794786146775.jpg';
-import cacamba3mImg from '../assets/images/cacamba_3m_compact_1794786147294.jpg';
-import cacamba5mImg from '../assets/images/cacamba_5m_obra_1794786147686.jpg';
 import descarteAttImg from '../assets/images/descarte_sustentavel_att_1794786148098.jpg';
 
 export const ASSET_IMAGES = {
-  heroTruck: heroTruckImg,
-  cacamba3m: cacamba3mImg,
-  cacamba5m: cacamba5mImg,
+  heroTruck: '/assets/aistudio/Ca_amba_Amarela_em_Obra_Urbana-5_c5e764fe.png',
+  cacamba3m: '/assets/aistudio/Ca_amba_Amarela_em_Obra_Urbana-1_41d7bf50.png',
+  cacamba4m: '/assets/aistudio/Ca_amba_Amarela_Cheia_de_Entulho-4_b599eb84.png',
+  cacamba5m: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_47-1_b11e6073.png',
   descarteAtt: descarteAttImg,
 } as const;
+
+export const GALLERY_IMAGES = [
+  {
+    src: '/assets/aistudio/Ca_amba_Amarela_em_Obra_Urbana-5_c5e764fe.png',
+    alt: 'Caçamba amarela com faixa refletiva posicionada em obra urbana residencial',
+    title: 'Obra Residencial Urbana',
+  },
+  {
+    src: '/assets/aistudio/Ca_amba_Amarela_Cheia_de_Entulho-4_b599eb84.png',
+    alt: 'Caçamba estacionária amarela carregada com entulho de alvenaria e tijolos',
+    title: 'Retirada de Alvenaria',
+  },
+  {
+    src: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_48-4_113a6f15.png',
+    alt: 'Caçamba amarela com sinalização refletiva em canteiro de construção',
+    title: 'Canteiro de Construção',
+  },
+  {
+    src: '/assets/aistudio/Ca_amba_Amarela_em_Obra_Urbana-1_41d7bf50.png',
+    alt: 'Caçamba estacionária amarela estacionada junto ao meio-fio em reforma residencial',
+    title: 'Reforma em Casa e Garagem',
+  },
+  {
+    src: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_47-1_b11e6073.png',
+    alt: 'Caçamba amarela de grande porte em obra de edifício residencial',
+    title: 'Obra de Edifício',
+  },
+  {
+    src: '/assets/aistudio/Ca_amba_amarela_cheia_de_entulho-2_40cddffc.png',
+    alt: 'Caçamba amarela atendendo reforma comercial em rua urbana',
+    title: 'Reforma Comercial',
+  },
+  {
+    src: '/assets/aistudio/Ca_amba_Amarela_em_Obra_Urbana-3_27dbb66c.png',
+    alt: 'Caçamba estacionária amarela posicionada em frente à obra residencial',
+    title: 'Coleta de Entulho Limpo',
+  },
+  {
+    src: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_49-5_d539148a.png',
+    alt: 'Caçamba amarela estacionada em rua arborizada de bairro residencial',
+    title: 'Atendimento em Bairros',
+  },
+  {
+    src: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_47-2_8eca7584.png',
+    alt: 'Caçamba estacionária posicionada no meio-fio em área urbana',
+    title: 'Posicionamento em Via Pública',
+  },
+  {
+    src: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_48-3_87ada7e7.png',
+    alt: 'Caçamba carregada com restos de concreto e alvenaria para descarte legal',
+    title: 'Descarte de Concreto e Obra',
+  },
+] as const;
 
 export const COMPANY_INFO = {
   brandName: 'Caçambas Brasil',
@@ -49,8 +100,8 @@ export const DUMPSTER_MODELS: DumpsterModel[] = [
     capacityBags: 'Equivalente a aprox. 55 sacos de 50kg',
     idealFor:
       'Indicada para reformas de banheiros, cozinhas, troca de pisos, demolições pontuais e locais com garagem ou recuo estreito.',
-    imageSrc: cacamba3mImg,
-    imageAlt: 'Caçamba estacionária amarela de 3m³ posicionada em área residencial limpa',
+    imageSrc: ASSET_IMAGES.cacamba3m,
+    imageAlt: 'Caçamba estacionária amarela de 3m³ estacionada em frente à reforma residencial',
     whatsappMessage:
       'Olá, Caçambas Brasil! Gostaria de solicitar um orçamento para locação de uma caçamba de 3m³ (Compacta).',
   },
@@ -63,8 +114,8 @@ export const DUMPSTER_MODELS: DumpsterModel[] = [
     capacityBags: 'Equivalente a aprox. 75 sacos de 50kg',
     idealFor:
       'Indicada para reformas completas de apartamentos, casas, retirada de entulho de alvenaria, concreto e restos de construção civil.',
-    imageSrc: heroTruckImg,
-    imageAlt: 'Caminhão poliguindaste posicionando caçamba estacionária padrão amarela em frente à obra',
+    imageSrc: ASSET_IMAGES.cacamba4m,
+    imageAlt: 'Caçamba estacionária amarela padrão de 4m³ com entulho de obra e alvenaria',
     whatsappMessage:
       'Olá, Caçambas Brasil! Gostaria de solicitar um orçamento para locação de uma caçamba de 4m³ (Padrão).',
   },
@@ -77,8 +128,8 @@ export const DUMPSTER_MODELS: DumpsterModel[] = [
     capacityBags: 'Equivalente a aprox. 95 sacos de 50kg',
     idealFor:
       'Indicada para construções do zero, grandes reformas comerciais, condomínios, limpeza de terrenos e descarte volumoso de madeira.',
-    imageSrc: cacamba5mImg,
-    imageAlt: 'Caçamba estacionária grande porte de 5m³ ao lado de canteiro de obra comercial organizado',
+    imageSrc: ASSET_IMAGES.cacamba5m,
+    imageAlt: 'Caçamba estacionária amarela de 5m³ atendendo obra de edifício em construção',
     whatsappMessage:
       'Olá, Caçambas Brasil! Gostaria de solicitar um orçamento para locação de uma caçamba de 5m³ (Grande Porte).',
   },

@@ -52,10 +52,11 @@ export const WasteComplianceSection: React.FC = () => {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-[#0B2545] hover:bg-[#13315C] text-white text-sm font-bold transition-colors whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 sm:px-5 py-3.5 rounded-xl bg-[#0B2545] hover:bg-[#13315C] text-white text-sm font-bold transition-colors whitespace-nowrap"
               >
                 <WhatsAppIcon className="w-4 h-4 text-yellow-400 shrink-0" />
-                <span>Tirar Dúvida sobre Resíduos no WhatsApp</span>
+                <span className="sm:hidden">Tirar Dúvida no WhatsApp</span>
+                <span className="hidden sm:inline">Tirar Dúvida sobre Resíduos no WhatsApp</span>
               </a>
             </div>
           </div>

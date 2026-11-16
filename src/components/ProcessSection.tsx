@@ -25,7 +25,7 @@ export const ProcessSection: React.FC = () => {
             )}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-[#0B2545] text-sm font-extrabold transition-colors whitespace-nowrap shrink-0"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-4 sm:px-5 py-3.5 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-[#0B2545] text-sm font-extrabold transition-colors whitespace-nowrap shrink-0"
           >
             <WhatsAppIcon className="w-4 h-4 shrink-0" />
             <span>Agendar Entrega no WhatsApp</span>
