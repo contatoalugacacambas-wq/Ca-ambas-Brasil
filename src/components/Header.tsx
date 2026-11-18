@@ -7,12 +7,12 @@ export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const headerWhatsAppUrl = buildWhatsAppUrl(
-    'Olá! Vim pelo site da Caçambas Brasil e gostaria de solicitar um orçamento de caçamba de entulho.'
+    'Olá, Caçambas Brasil! Vim pelo site e quero um orçamento de caçamba de entulho. Minha cidade e bairro são:'
   );
 
   const navLinks = [
-    { href: '#modelos', label: 'Tamanhos' },
     { href: '#orcamento', label: 'Orçamento' },
+    { href: '#modelos', label: 'Tamanhos' },
     { href: '#como-funciona', label: 'Como Funciona' },
     { href: '#residuos', label: 'Resíduos' },
     { href: '#duvidas', label: 'Dúvidas' },
@@ -20,16 +20,16 @@ export const Header: React.FC = () => {
 
   return (
     <header className="sticky top-0 z-40 bg-[#0B2545] border-b border-blue-900/80 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3 sm:gap-6 lg:gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-3 sm:gap-6 lg:gap-8">
         {/* Zone 1: Single-line Brand Wordmark */}
         <a
           href="#topo"
-          className="text-lg sm:text-xl font-extrabold tracking-tight text-white whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow-400"
+          className="text-base sm:text-xl font-extrabold tracking-tight text-white whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-yellow-400"
         >
           Caçambas <span className="text-yellow-400">Brasil</span>
         </a>
 
-        {/* Zone 2: 5 clean single-line nav links */}
+        {/* Zone 2: 5 single-line sitelink nav links */}
         <nav
           aria-label="Navegação principal"
           className="hidden md:flex items-center gap-6 text-sm font-medium text-blue-100"
@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
           ))}
         </nav>
 
-        {/* Zone 3: 1 Primary CTA + Mobile Menu Toggle */}
+        {/* Zone 3: Primary WhatsApp CTA + Mobile Toggle */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <a
             href={headerWhatsAppUrl}
@@ -63,7 +63,7 @@ export const Header: React.FC = () => {
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-expanded={mobileMenuOpen}
             aria-label={mobileMenuOpen ? 'Fechar menu' : 'Abrir menu'}
-            className="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg border border-blue-800 text-blue-100 hover:bg-blue-900 transition-colors"
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-blue-800 text-blue-100 hover:bg-blue-900 transition-colors"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

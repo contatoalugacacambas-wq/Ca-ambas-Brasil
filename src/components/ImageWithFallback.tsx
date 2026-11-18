@@ -5,6 +5,11 @@ interface ImageWithFallbackProps {
   src: string;
   alt: string;
   fallbackTitle: string;
+  width?: number;
+  height?: number;
+  loading?: 'eager' | 'lazy';
+  decoding?: 'sync' | 'async' | 'auto';
+  fetchPriority?: 'high' | 'low' | 'auto';
   className?: string;
 }
 
@@ -12,6 +17,11 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   src,
   alt,
   fallbackTitle,
+  width,
+  height,
+  loading = 'lazy',
+  decoding = 'async',
+  fetchPriority = 'auto',
   className = '',
 }) => {
   const [hasError, setHasError] = useState(false);
@@ -34,6 +44,11 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
     <img
       src={src}
       alt={alt}
+      width={width}
+      height={height}
+      loading={loading}
+      decoding={decoding}
+      fetchPriority={fetchPriority}
       referrerPolicy="no-referrer"
       onError={() => setHasError(true)}
       className={className}

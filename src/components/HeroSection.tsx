@@ -1,167 +1,158 @@
-import React, { useState } from 'react';
-import { Phone, ArrowRight } from 'lucide-react';
+import React from 'react';
+import { Phone, ArrowDown, HelpCircle } from 'lucide-react';
 import { ASSET_IMAGES, COMPANY_INFO, buildWhatsAppUrl } from '../data/siteConfig';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { ImageWithFallback } from './ImageWithFallback';
 
-const QUICK_VOLUMES = [
-  { id: '3m3', label: '3m³ Compacta', hint: 'Pequenas reformas' },
-  { id: '4m3', label: '4m³ Padrão', hint: 'Obras residenciais' },
-  { id: '5m3', label: '5m³ Grande', hint: 'Demolições e empresas' },
-];
-
 export const HeroSection: React.FC = () => {
-  const [selectedVol, setSelectedVol] = useState('4m³ Padrão');
+  const directWhatsAppUrl = buildWhatsAppUrl(
+    'Olá, Caçambas Brasil! Vim pelo site e quero um orçamento de caçamba de entulho. Minha cidade e bairro são:'
+  );
 
-  const heroWhatsAppUrl = buildWhatsAppUrl(
-    `Olá, Caçambas Brasil! Preciso alugar uma caçamba (${selectedVol}). Gostaria de consultar disponibilidade e valor para meu bairro.`
+  const sizeHelpWhatsAppUrl = buildWhatsAppUrl(
+    'Olá, Caçambas Brasil! Preciso de orientação para escolher o tamanho ideal da caçamba para minha obra. Minha cidade e bairro são:'
   );
 
   return (
-    <section id="topo" className="bg-[#0B2545] text-white border-b-4 border-yellow-400">
+    <section
+      id="topo"
+      className="scroll-mt-16 sm:scroll-mt-20 bg-[#0B2545] text-white border-b-4 border-yellow-400"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-10 sm:pt-10 sm:pb-12 lg:pt-14 lg:pb-16">
-        {/* Asymmetric Hero Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-stretch">
           <div className="order-2 lg:order-1 lg:col-span-6 flex flex-col justify-center min-w-0">
             <p className="text-xs sm:text-sm font-medium text-yellow-300 mb-3 sm:mb-4">
-              <span>Locação de Caçambas Estacionárias</span>
+              <span>Aluguel de Caçambas · 3m³, 4m³ e 5m³</span>
               <span aria-hidden="true" className="mx-1.5 sm:mx-2 text-blue-400">·</span>
-              <span>3m³, 4m³ e 5m³</span>
-              <span aria-hidden="true" className="mx-1.5 sm:mx-2 text-blue-400">·</span>
-              <span>Nota Fiscal e CTR</span>
+              <span>Casas, Condomínios e Empresas</span>
             </p>
 
             <h1
               className="text-white font-extrabold tracking-tight leading-[1.08] mb-4 sm:mb-5"
               style={{
-                fontSize: 'clamp(1.85rem, 3.8vw, 3.5rem)',
+                fontSize: 'clamp(1.85rem, 3.8vw, 3.4rem)',
                 textWrap: 'balance',
               }}
             >
-              Caçamba de entulho na sua obra com entrega programada e descarte legal.
+              Aluguel de caçamba de entulho para sua obra
             </h1>
 
-            <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-xl mb-7">
-              Atendimento direto para reformas, construções, condomínios e empresas. Frota
-              própria, caçambas sinalizadas e encaminhamento exclusivamente para aterros e
-              ATTs licenciados.
+            <p className="text-base sm:text-lg text-blue-100 leading-relaxed max-w-xl mb-6 sm:mb-7">
+              Solicite seu orçamento pelo WhatsApp. Atendimento com parceiros em diversas regiões
+              do Brasil, conforme disponibilidade na sua cidade.
             </p>
 
-            {/* Quick Interactive Volume Selector inside Hero */}
-            <div className="rounded-xl bg-[#13315C] border border-blue-800/80 p-3.5 sm:p-4 mb-6">
-              <p className="text-xs font-semibold text-blue-200 mb-2.5">
-                Selecione o tamanho desejado e peça direto no WhatsApp:
-              </p>
-              <div className="grid grid-cols-3 gap-1.5 sm:gap-2 mb-3.5 sm:mb-4">
-                {QUICK_VOLUMES.map((item) => {
-                  const active = selectedVol === item.label;
-                  return (
-                    <button
-                      key={item.id}
-                      type="button"
-                      onClick={() => setSelectedVol(item.label)}
-                      className={`px-2 sm:px-2.5 py-2 sm:py-2.5 rounded-lg text-left transition-colors border min-w-0 ${
-                        active
-                          ? 'bg-yellow-400 text-[#0B2545] border-yellow-300 font-bold'
-                          : 'bg-[#0B2545]/70 text-blue-100 border-blue-800 hover:border-blue-600'
-                      }`}
-                    >
-                      <span className="block text-[11px] sm:text-sm font-bold whitespace-nowrap truncate">
-                        {item.label}
-                      </span>
-                      <span
-                        className={`block text-[10px] sm:text-[11px] truncate ${
-                          active ? 'text-[#0B2545]/80 font-medium' : 'text-blue-300'
-                        }`}
-                      >
-                        {item.hint}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3">
+            {/* Direct WhatsApp Conversion Primary Block */}
+            <div className="space-y-3 mb-6">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3">
                 <a
-                  href={heroWhatsAppUrl}
+                  href={directWhatsAppUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-[#0B2545] text-sm sm:text-base font-extrabold transition-colors whitespace-nowrap shrink-0 flex-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+                  className="inline-flex items-center justify-center gap-2.5 px-5 sm:px-7 py-4 rounded-xl bg-yellow-400 hover:bg-yellow-300 text-[#0B2545] text-base font-extrabold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
                 >
                   <WhatsAppIcon className="w-5 h-5 shrink-0" />
-                  <span>Pedir {selectedVol} no WhatsApp</span>
+                  <span>Pedir orçamento no WhatsApp</span>
                 </a>
 
                 <a
-                  href="#orcamento"
-                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border border-blue-700 bg-[#0B2545] hover:bg-blue-900 text-white text-sm font-semibold transition-colors whitespace-nowrap shrink-0"
+                  href="#modelos"
+                  className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border border-blue-700 bg-[#13315C]/60 hover:bg-blue-900 text-blue-100 text-sm font-semibold transition-colors whitespace-nowrap shrink-0"
                 >
-                  <span>Simular Obra</span>
-                  <ArrowRight className="w-4 h-4 text-yellow-400 shrink-0" />
+                  <span>Ver tamanhos de caçamba</span>
+                  <ArrowDown className="w-4 h-4 text-yellow-400 shrink-0" />
+                </a>
+              </div>
+
+              <p className="text-sm text-blue-100">
+                Informe sua cidade e bairro para consultar preço e disponibilidade.
+              </p>
+
+              <div>
+                <a
+                  href={sizeHelpWhatsAppUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-yellow-300 hover:text-yellow-200 underline underline-offset-4 transition-colors"
+                >
+                  <HelpCircle className="w-4 h-4 shrink-0" />
+                  <span>Não sabe qual tamanho escolher? Peça orientação no WhatsApp</span>
                 </a>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-blue-200">
+            <div className="pt-4 border-t border-blue-800/80 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-blue-200">
               <a
                 href={`tel:+${COMPANY_INFO.phoneRaw}`}
                 className="inline-flex items-center gap-1.5 font-mono font-semibold text-white hover:text-yellow-300 transition-colors"
               >
                 <Phone className="w-4 h-4 text-yellow-400 shrink-0" />
-                <span>Telefone: {COMPANY_INFO.phoneDisplay}</span>
+                <span>Central: {COMPANY_INFO.phoneDisplay}</span>
               </a>
               <span aria-hidden="true" className="text-blue-700">|</span>
-              <span>{COMPANY_INFO.hoursWeek}</span>
+              <span>Consulta por cidade e bairro</span>
             </div>
           </div>
 
           <div className="order-1 lg:order-2 lg:col-span-6 flex">
-            <div className="relative w-full rounded-2xl overflow-hidden border-2 border-yellow-400/90 bg-[#13315C] aspect-[16/10] lg:aspect-auto lg:min-h-[460px]">
+            <div className="relative w-full rounded-2xl overflow-hidden border-2 border-yellow-400/90 bg-[#13315C] aspect-[16/10] lg:aspect-auto lg:min-h-[430px]">
               <ImageWithFallback
-                src={ASSET_IMAGES.heroTruck}
-                alt="Caçamba estacionária amarela da Caçambas Brasil com sinalização refletiva em obra urbana"
-                fallbackTitle="Caçambas Brasil em Obra"
+                src={ASSET_IMAGES.hero.src}
+                width={ASSET_IMAGES.hero.width}
+                height={ASSET_IMAGES.hero.height}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                alt={ASSET_IMAGES.hero.alt}
+                fallbackTitle="Caçambas Brasil"
                 className="w-full h-full object-cover lg:absolute lg:inset-0"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#071830]/95 via-[#071830]/60 to-transparent p-5 sm:p-6">
-                <p className="text-sm sm:text-base font-semibold text-white">
-                  Entrega programada com caçambas sinalizadas e retirada ágil após o enchimento.
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#071830]/95 via-[#071830]/60 to-transparent p-4 sm:p-6">
+                <p className="text-xs sm:text-sm font-medium text-white leading-snug">
+                  Atendemos por uma rede de parceiros em diversas regiões do Brasil. Nossa central
+                  consulta disponibilidade e condições para o endereço da sua obra.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Full-Width 4-Column Operational Spec Bar */}
+        {/* Truthful 4-Column Operational Summary Strip */}
         <div className="mt-10 pt-8 border-t border-blue-800/80 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div>
-            <p className="text-xs font-medium text-yellow-300">Capacidades Disponíveis</p>
-            <p className="text-lg font-bold text-white font-mono tabular-nums mt-1">
+            <p className="text-xs font-medium text-yellow-300">Rede de Parceiros</p>
+            <p className="text-base sm:text-lg font-bold text-white mt-1">
+              Diversas Regiões do Brasil
+            </p>
+            <p className="text-sm text-blue-200 mt-1">
+              Nossa central verifica cobertura e condições para sua cidade e bairro.
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-medium text-yellow-300">Tamanhos em m³</p>
+            <p className="text-base sm:text-lg font-bold text-white font-mono tabular-nums mt-1">
               3m³ · 4m³ · 5m³
             </p>
             <p className="text-sm text-blue-200 mt-1">
-              Dimensões adequadas de garagens estreitas a grandes canteiros.
+              Escolha o volume ou peça orientação antes da confirmação do pedido.
             </p>
           </div>
           <div>
-            <p className="text-xs font-medium text-yellow-300">Destinação Ambiental</p>
-            <p className="text-lg font-bold text-white mt-1">ATTs e Aterros Licenciados</p>
+            <p className="text-xs font-medium text-yellow-300">Tipos de Atendimento</p>
+            <p className="text-base sm:text-lg font-bold text-white mt-1">
+              Casas, Condomínios e Empresas
+            </p>
             <p className="text-sm text-blue-200 mt-1">
-              Conformidade com legislação municipal e emissão de CTR.
+              Aluguel de caçamba para obras, reformas e limpeza de resíduos permitidos.
             </p>
           </div>
           <div>
-            <p className="text-xs font-medium text-yellow-300">Documentação Completa</p>
-            <p className="text-lg font-bold text-white mt-1">Nota Fiscal e Contrato</p>
-            <p className="text-sm text-blue-200 mt-1 font-mono tabular-nums">
-              Atendimento PF, Condomínios e PJ
+            <p className="text-xs font-medium text-yellow-300">Agendamento Combinado</p>
+            <p className="text-base sm:text-lg font-bold text-white mt-1">
+              Entrega e Retirada via Central
             </p>
-          </div>
-          <div>
-            <p className="text-xs font-medium text-yellow-300">Agilidade na Cotação</p>
-            <p className="text-lg font-bold text-white mt-1">Atendimento pelo WhatsApp</p>
             <p className="text-sm text-blue-200 mt-1">
-              Valor informado com clareza antes da confirmação da entrega.
+              Prazos, documentos aplicáveis e valores confirmados antes de fechar.
             </p>
           </div>
         </div>

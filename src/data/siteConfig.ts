@@ -1,76 +1,92 @@
-import descarteAttImg from '../assets/images/descarte_sustentavel_att_1794786148098.jpg';
+import heroCacambaImg from '../assets/cacambas/hero_cacamba.webp';
+import modelo3mImg from '../assets/cacambas/modelo_3m.webp';
+import modelo4mImg from '../assets/cacambas/modelo_4m.webp';
+import modelo5mImg from '../assets/cacambas/modelo_5m.webp';
+import galeria01Img from '../assets/cacambas/galeria_01.webp';
+import galeria02Img from '../assets/cacambas/galeria_02.webp';
+import galeria03Img from '../assets/cacambas/galeria_03.webp';
+import galeria04Img from '../assets/cacambas/galeria_04.webp';
+import galeria05Img from '../assets/cacambas/galeria_05.webp';
+import galeria06Img from '../assets/cacambas/galeria_06.webp';
+import descarteLegalImg from '../assets/cacambas/descarte_legal.webp';
+
+export interface AssetImageMeta {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  title?: string;
+}
 
 export const ASSET_IMAGES = {
-  heroTruck: '/assets/aistudio/Ca_amba_Amarela_em_Obra_Urbana-5_c5e764fe.png',
-  cacamba3m: '/assets/aistudio/Ca_amba_Amarela_em_Obra_Urbana-1_41d7bf50.png',
-  cacamba4m: '/assets/aistudio/Ca_amba_Amarela_Cheia_de_Entulho-4_b599eb84.png',
-  cacamba5m: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_47-1_b11e6073.png',
-  descarteAtt: descarteAttImg,
+  hero: {
+    src: heroCacambaImg,
+    width: 900,
+    height: 900,
+    alt: 'Caçamba estacionária amarela de entulho posicionada em obra urbana',
+  },
+  descarteLegal: {
+    src: descarteLegalImg,
+    width: 960,
+    height: 536,
+    alt: 'Área de triagem e destinação de resíduos da construção civil',
+  },
 } as const;
 
-export const GALLERY_IMAGES = [
+export const GALLERY_IMAGES: AssetImageMeta[] = [
   {
-    src: '/assets/aistudio/Ca_amba_Amarela_em_Obra_Urbana-5_c5e764fe.png',
-    alt: 'Caçamba amarela com faixa refletiva posicionada em obra urbana residencial',
-    title: 'Obra Residencial Urbana',
-  },
-  {
-    src: '/assets/aistudio/Ca_amba_Amarela_Cheia_de_Entulho-4_b599eb84.png',
-    alt: 'Caçamba estacionária amarela carregada com entulho de alvenaria e tijolos',
-    title: 'Retirada de Alvenaria',
-  },
-  {
-    src: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_48-4_113a6f15.png',
-    alt: 'Caçamba amarela com sinalização refletiva em canteiro de construção',
+    src: galeria01Img,
+    width: 800,
+    height: 1000,
+    alt: 'Caçamba amarela utilizada em canteiro de construção civil',
     title: 'Canteiro de Construção',
   },
   {
-    src: '/assets/aistudio/Ca_amba_Amarela_em_Obra_Urbana-1_41d7bf50.png',
-    alt: 'Caçamba estacionária amarela estacionada junto ao meio-fio em reforma residencial',
-    title: 'Reforma em Casa e Garagem',
+    src: galeria02Img,
+    width: 800,
+    height: 800,
+    alt: 'Caçamba estacionária amarela em reforma urbana',
+    title: 'Reforma Comercial e Urbana',
   },
   {
-    src: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_47-1_b11e6073.png',
-    alt: 'Caçamba amarela de grande porte em obra de edifício residencial',
-    title: 'Obra de Edifício',
+    src: galeria03Img,
+    width: 800,
+    height: 800,
+    alt: 'Caçamba amarela posicionada em frente a residência em reforma',
+    title: 'Coleta de Entulho de Obra',
   },
   {
-    src: '/assets/aistudio/Ca_amba_amarela_cheia_de_entulho-2_40cddffc.png',
-    alt: 'Caçamba amarela atendendo reforma comercial em rua urbana',
-    title: 'Reforma Comercial',
-  },
-  {
-    src: '/assets/aistudio/Ca_amba_Amarela_em_Obra_Urbana-3_27dbb66c.png',
-    alt: 'Caçamba estacionária amarela posicionada em frente à obra residencial',
-    title: 'Coleta de Entulho Limpo',
-  },
-  {
-    src: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_49-5_d539148a.png',
-    alt: 'Caçamba amarela estacionada em rua arborizada de bairro residencial',
+    src: galeria04Img,
+    width: 800,
+    height: 1000,
+    alt: 'Caçamba amarela estacionada junto ao meio-fio em rua residencial',
     title: 'Atendimento em Bairros',
   },
   {
-    src: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_47-2_8eca7584.png',
-    alt: 'Caçamba estacionária posicionada no meio-fio em área urbana',
+    src: galeria05Img,
+    width: 800,
+    height: 1000,
+    alt: 'Caçamba estacionária posicionada junto à calçada em área urbana',
     title: 'Posicionamento em Via Pública',
   },
   {
-    src: '/assets/aistudio/Imagem_do_ChatGPT_1_de_nov._de_2026__16_44_48-3_87ada7e7.png',
-    alt: 'Caçamba carregada com restos de concreto e alvenaria para descarte legal',
-    title: 'Descarte de Concreto e Obra',
+    src: galeria06Img,
+    width: 800,
+    height: 1000,
+    alt: 'Caçamba carregada com restos de concreto e alvenaria',
+    title: 'Resíduos de Alvenaria e Concreto',
   },
-] as const;
+];
 
 export const COMPANY_INFO = {
   brandName: 'Caçambas Brasil',
   legalName: 'MS CACAMBAS LTDA',
   cnpj: '60.133.180/0001-01',
+  domain: 'https://cacambasbrasilentulho.com/',
   email: 'contato.alugacacambas@gmail.com',
   phoneRaw: '553190184724',
   phoneDisplay: '(31) 9018-4724',
   phoneInternational: '+55 (31) 9018-4724',
-  hoursWeek: 'Segunda a Sexta: 07h00 às 18h00',
-  hoursSaturday: 'Sábado: 07h00 às 13h00',
 } as const;
 
 export function buildWhatsAppUrl(message: string): string {
@@ -83,9 +99,11 @@ export interface DumpsterModel {
   title: string;
   subtitle: string;
   dimensions: string;
-  capacityBags: string;
+  capacityGuidance: string;
   idealFor: string;
   imageSrc: string;
+  imageWidth: number;
+  imageHeight: number;
   imageAlt: string;
   whatsappMessage: string;
 }
@@ -94,44 +112,50 @@ export const DUMPSTER_MODELS: DumpsterModel[] = [
   {
     id: '3m3',
     volume: '3m³',
-    title: 'Caçamba Compacta 3m³',
-    subtitle: 'Ideal para pequenas reformas e espaços reduzidos',
-    dimensions: '2,20m × 1,50m × 0,95m',
-    capacityBags: 'Equivalente a aprox. 55 sacos de 50kg',
+    title: 'Caçamba 3m³ (Compacta)',
+    subtitle: 'Indicada para pequenas reformas e espaços reduzidos',
+    dimensions: 'Aprox. 2,20m × 1,50m × 0,95m',
+    capacityGuidance: 'Volume de 3m³ · Confirme limites de peso e carga com a central',
     idealFor:
-      'Indicada para reformas de banheiros, cozinhas, troca de pisos, demolições pontuais e locais com garagem ou recuo estreito.',
-    imageSrc: ASSET_IMAGES.cacamba3m,
-    imageAlt: 'Caçamba estacionária amarela de 3m³ estacionada em frente à reforma residencial',
+      'Adequada para reformas de banheiros, cozinhas, troca de pisos, pequenos reparos e locais com garagem ou recuo mais estreito.',
+    imageSrc: modelo3mImg,
+    imageWidth: 900,
+    imageHeight: 900,
+    imageAlt: 'Exemplo ilustrativo de caçamba estacionária amarela de 3m³ em reforma residencial',
     whatsappMessage:
-      'Olá, Caçambas Brasil! Gostaria de solicitar um orçamento para locação de uma caçamba de 3m³ (Compacta).',
+      'Olá, Caçambas Brasil! Gostaria de consultar disponibilidade e orçamento para caçamba de 3m³. Minha cidade e bairro são:',
   },
   {
     id: '4m3',
     volume: '4m³',
-    title: 'Caçamba Padrão 4m³',
-    subtitle: 'O modelo mais utilizado em reformas residenciais',
-    dimensions: '2,50m × 1,60m × 1,10m',
-    capacityBags: 'Equivalente a aprox. 75 sacos de 50kg',
+    title: 'Caçamba 4m³ (Padrão)',
+    subtitle: 'Indicada para reformas residenciais e obras de médio porte',
+    dimensions: 'Aprox. 2,50m × 1,60m × 1,10m',
+    capacityGuidance: 'Volume de 4m³ · Confirme limites de peso e carga com a central',
     idealFor:
-      'Indicada para reformas completas de apartamentos, casas, retirada de entulho de alvenaria, concreto e restos de construção civil.',
-    imageSrc: ASSET_IMAGES.cacamba4m,
-    imageAlt: 'Caçamba estacionária amarela padrão de 4m³ com entulho de obra e alvenaria',
+      'Indicada para reformas de casas, apartamentos, salas comerciais e retirada de entulho de alvenaria, argamassa e restos de construção.',
+    imageSrc: modelo4mImg,
+    imageWidth: 900,
+    imageHeight: 900,
+    imageAlt: 'Exemplo ilustrativo de caçamba estacionária amarela de 4m³ com entulho de alvenaria',
     whatsappMessage:
-      'Olá, Caçambas Brasil! Gostaria de solicitar um orçamento para locação de uma caçamba de 4m³ (Padrão).',
+      'Olá, Caçambas Brasil! Gostaria de consultar disponibilidade e orçamento para caçamba de 4m³. Minha cidade e bairro são:',
   },
   {
     id: '5m3',
     volume: '5m³',
-    title: 'Caçamba Grande Porte 5m³',
-    subtitle: 'Máxima capacidade para obras, demolições e empresas',
-    dimensions: '2,70m × 1,65m × 1,25m',
-    capacityBags: 'Equivalente a aprox. 95 sacos de 50kg',
+    title: 'Caçamba 5m³ (Grande Porte)',
+    subtitle: 'Maior volume para obras, demolições e empresas',
+    dimensions: 'Aprox. 2,70m × 1,65m × 1,25m',
+    capacityGuidance: 'Volume de 5m³ · Confirme limites de peso e carga com a central',
     idealFor:
-      'Indicada para construções do zero, grandes reformas comerciais, condomínios, limpeza de terrenos e descarte volumoso de madeira.',
-    imageSrc: ASSET_IMAGES.cacamba5m,
-    imageAlt: 'Caçamba estacionária amarela de 5m³ atendendo obra de edifício em construção',
+      'Indicada para construções completas, grandes reformas comerciais, condomínios, demolições e descarte mais volumoso de resíduos permitidos.',
+    imageSrc: modelo5mImg,
+    imageWidth: 800,
+    imageHeight: 1000,
+    imageAlt: 'Exemplo ilustrativo de caçamba estacionária amarela de 5m³ em canteiro de obra',
     whatsappMessage:
-      'Olá, Caçambas Brasil! Gostaria de solicitar um orçamento para locação de uma caçamba de 5m³ (Grande Porte).',
+      'Olá, Caçambas Brasil! Gostaria de consultar disponibilidade e orçamento para caçamba de 5m³. Minha cidade e bairro são:',
   },
 ];
 
@@ -142,15 +166,15 @@ export const WASTE_PERMITTED = [
   },
   {
     category: 'Terra e Pedras',
-    detail: 'Terra limpa proveniente de escavação, areia, brita e cascalho sem contaminação.',
+    detail: 'Terra limpa de escavação, areia, brita e cascalho sem contaminação (confirme peso com a central).',
   },
   {
     category: 'Madeiras de Obra',
-    detail: 'Caibros, tábuas, portas, batentes e pallets (preferencialmente separados conforme orientação).',
+    detail: 'Caibros, tábuas, portas, batentes e pallets, conforme orientação prévia da central.',
   },
   {
-    category: 'Metais e Plásticos de Construção',
-    detail: 'Sucata de ferro, vergalhões, tubulações de PVC e embalagens vazias secas.',
+    category: 'Metais e Plásticos de Obra',
+    detail: 'Sucata de ferro, vergalhões, tubulações de PVC e embalagens de construção vazias e secas.',
   },
 ];
 
@@ -161,74 +185,74 @@ export const WASTE_PROHIBITED = [
   },
   {
     category: 'Resíduos Perigosos e Químicos',
-    detail: 'Tintas líquidas, solventes, óleos, baterias, amianto (telha de fibrocimento antiga) e inflamáveis.',
+    detail: 'Tintas líquidas, solventes, óleos, baterias, amianto e materiais inflamáveis.',
   },
   {
     category: 'Resíduos Hospitalares e Pneus',
-    detail: 'Lixo infectante, seringas, medicamentos, pneus inservíveis e lixo eletrônico.',
+    detail: 'Lixo infectante, seringas, medicamentos, pneus e lixo eletrônico.',
   },
   {
     category: 'Gesso Misturado sem Aviso',
-    detail: 'Placas de drywall e gesso exigem caçamba exclusiva ou triagem prévia; consulte no WhatsApp antes do descarte.',
+    detail: 'Placas de drywall e gesso podem exigir caçamba exclusiva ou regras específicas; consulte a central antes do descarte.',
   },
 ];
 
 export const PROCESS_STEPS = [
   {
     number: '01.',
-    title: 'Cotação Imediata no WhatsApp',
+    title: 'Contato pelo WhatsApp',
     description:
-      'Informe seu bairro, o tipo de resíduo e o volume estimado. Nossa equipe confirma disponibilidade, valor fechado e horário de entrega na hora.',
+      'Envie sua cidade, bairro e, se já souber, o tipo de resíduo. Se não souber o tamanho ideal, nossa central orienta na escolha.',
   },
   {
     number: '02.',
-    title: 'Entrega e Posicionamento Seguro',
+    title: 'Consulta com Parceiros Locais',
     description:
-      'O caminhão poliguindaste posiciona a caçamba sinalizada com faixas refletivas no recuo da obra ou em local permitido na via pública.',
+      'Nossa central verifica disponibilidade na sua região e informa valor, prazo de permanência e condições de entrega e documentação aplicável.',
   },
   {
     number: '03.',
-    title: 'Prazo Transparente na Obra',
+    title: 'Entrega Combinada na Obra',
     description:
-      'Você utiliza a caçamba pelo período combinado em contrato (geralmente de 3 a 7 dias úteis conforme região e tipo de resíduo), respeitando o limite da borda.',
+      'Após a confirmação do pedido, o parceiro realiza a entrega no endereço informado, em área interna ou local permitido conforme regras municipais.',
   },
   {
     number: '04.',
-    title: 'Retirada, CTR e Destinação Legal',
+    title: 'Retirada e Destinação',
     description:
-      'Ao finalizar ou solicitar a troca, recolhemos a caçamba e encaminhamos os resíduos exclusivamente para ATTs e aterros licenciados, emitindo CTR e Nota Fiscal.',
+      'No prazo combinado ou mediante solicitação de troca/retirada com a central, a caçamba é recolhida pelo parceiro para destinação conforme normas locais.',
   },
 ];
 
 export const FAQ_ITEMS = [
   {
-    question: 'Como funciona o valor da locação de caçamba?',
+    question: 'Vocês atendem minha cidade?',
     answer:
-      'O preço varia de acordo com o tamanho da caçamba (3m³, 4m³ ou 5m³), o tipo de material descartado (entulho limpo, terra, madeira ou gesso) e o bairro de entrega. Envie seu CEP ou bairro no WhatsApp para receber o orçamento completo e sem taxas ocultas.',
+      'A Caçambas Brasil trabalha com parceiros em diversas regiões do Brasil. Informe cidade e bairro pelo WhatsApp para consultar disponibilidade, prazo e valor.',
   },
   {
-    question: 'Qual o prazo que a caçamba pode ficar parada na obra?',
+    question: 'Como é calculado o preço da locação de caçamba?',
     answer:
-      'O prazo padrão varia entre 3 e 7 dias corridos ou úteis, dependendo das normas do município e da área de atendimento. Caso precise de mais dias ou de troca antecipada por enchimento, basta avisar nossa central pelo WhatsApp.',
+      'O valor depende da cidade e bairro de entrega, do volume da caçamba (3m³, 4m³ ou 5m³), do tipo de resíduo a ser descartado e das condições do parceiro local. Consulte preço e disponibilidade diretamente pelo WhatsApp.',
   },
   {
-    question: 'A Caçambas Brasil emite Nota Fiscal e CTR?',
+    question: 'Não sei qual tamanho escolher (3m³, 4m³ ou 5m³). O que faço?',
     answer:
-      'Sim. A MS CACAMBAS LTDA (CNPJ 60.133.180/0001-01) emite Nota Fiscal de serviço para pessoas físicas, condomínios, construtoras e empresas, além do Controle de Transporte de Resíduos (CTR) comprovando a destinação ambiental correta.',
+      'Não precisa escolher sozinho. Chame nossa central no WhatsApp informando cidade, bairro e o tipo de reforma ou obra para receber orientação sobre o tamanho mais adequado.',
   },
   {
-    question: 'Posso colocar a caçamba na rua ou dentro da garagem?',
+    question: 'Como funciona a emissão de Nota Fiscal e documentos de destinação (CTR/MTR)?',
     answer:
-      'Sim, desde que o local tenha acesso livre para o caminhão poliguindaste (largura mínima aproximada de 3m e altura livre de fios/árvores). Em via pública, o posicionamento deve seguir a legislação de trânsito local (sem obstruir faixas de pedestres, hidrantes, esquinas ou vagas proibidas). Em áreas centrais com estacionamento rotativo, consulte regras da prefeitura.',
+      'A emissão de Nota Fiscal e de comprovantes como CTR ou MTR (quando exigidos pela legislação municipal) é confirmada previamente pela central junto ao parceiro responsável pelo atendimento na sua cidade.',
   },
   {
-    question: 'Até qual altura posso encher a caçamba?',
+    question: 'Posso colocar a caçamba na rua ou dentro do imóvel?',
     answer:
-      'Por determinação de segurança viária e legislação de transporte de cargas, o material deve ser nivelado no máximo até a borda superior da caçamba. Caçambas com carga acima da borda não podem trafegar em via pública por risco de queda de detritos.',
+      'Depende do espaço de acesso para o caminhão e da legislação municipal de trânsito da sua cidade. Informe o local pretendido à central antes da entrega para confirmar se há necessidade de autorização da prefeitura ou restrição de vaga.',
   },
   {
-    question: 'Quais são as formas de pagamento aceitas?',
+    question: 'Até qual limite posso encher a caçamba?',
     answer:
-      'Aceitamos Pix, transferência bancária, cartão de débito/crédito e faturamento mediante análise cadastral para empresas e construtoras.',
+      'Por segurança viária e normas de transporte, o resíduo não deve ultrapassar a borda superior da caçamba. Para materiais pesados como terra ou concreto, confirme também o limite de peso com a central.',
   },
 ];

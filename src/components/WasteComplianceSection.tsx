@@ -10,23 +10,30 @@ export const WasteComplianceSection: React.FC = () => {
   const [filter, setFilter] = useState<WasteFilter>('all');
 
   return (
-    <section id="residuos" className="py-16 lg:py-20 bg-[#F4F7FB] border-b border-slate-200">
+    <section
+      id="residuos"
+      className="scroll-mt-16 sm:scroll-mt-20 py-14 sm:py-16 lg:py-20 bg-[#F4F7FB] border-b border-slate-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch mb-10">
           <div className="lg:col-span-6 flex">
-            <div className="relative w-full rounded-2xl overflow-hidden border border-slate-200 bg-slate-200 min-h-[260px]">
+            <div className="relative w-full rounded-2xl overflow-hidden border border-slate-200 bg-slate-200 aspect-[16/9] lg:aspect-auto min-h-[240px]">
               <ImageWithFallback
-                src={ASSET_IMAGES.descarteAtt}
-                alt="Área de Transbordo e Triagem licenciada com separação de agregados reciclados da construção civil"
-                fallbackTitle="Destinação Ambiental Licenciada"
+                src={ASSET_IMAGES.descarteLegal.src}
+                width={ASSET_IMAGES.descarteLegal.width}
+                height={ASSET_IMAGES.descarteLegal.height}
+                loading="lazy"
+                decoding="async"
+                alt={ASSET_IMAGES.descarteLegal.alt}
+                fallbackTitle="Triagem e Destinação"
                 className="w-full h-full object-cover lg:absolute lg:inset-0"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#071830]/90 via-[#071830]/45 to-transparent p-5">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#071830]/90 via-[#071830]/45 to-transparent p-4 sm:p-5">
                 <p className="text-xs font-mono font-semibold text-yellow-300">
-                  Lei nº 12.305/2010 · CONAMA · Emissão de CTR
+                  Imagem ilustrativa · Regras variam conforme município
                 </p>
                 <p className="text-sm font-semibold text-white mt-1">
-                  Triagem e destinação exclusivamente em unidades licenciadas.
+                  Separe corretamente os materiais antes do carregamento da caçamba.
                 </p>
               </div>
             </div>
@@ -34,21 +41,22 @@ export const WasteComplianceSection: React.FC = () => {
 
           <div className="lg:col-span-6 flex flex-col justify-center">
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0B2545]">
-              03. Regras de Descarte e Destinação Legal
+              04. Resíduos Permitidos e Regras de Descarte
             </h2>
             <p className="text-base text-slate-600 leading-relaxed mt-3">
-              Todo material coletado pela Caçambas Brasil é encaminhado para Áreas de Transbordo
-              e Triagem (ATTs) ou aterros devidamente licenciados, com emissão de Controle de
-              Transporte de Resíduos (CTR).
+              O tipo de resíduo influencia o valor, o modelo disponível e o destino final na sua
+              cidade. A emissão de Nota Fiscal e de documentos de transporte (como CTR ou MTR,
+              quando exigidos) é confirmada pela central junto ao parceiro local antes do
+              fechamento.
             </p>
             <p className="text-sm text-slate-600 leading-relaxed mt-3">
-              Evite multas ambientais e bloqueios na retirada conferindo os materiais permitidos e
-              os itens proibidos por lei.
+              Confira abaixo a orientação geral do que costuma ser aceito e do que não deve ser
+              misturado. Em caso de dúvida, confirme com nossa equipe pelo WhatsApp.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <a
                 href={buildWhatsAppUrl(
-                  'Olá! Tenho dúvida sobre o tipo de resíduo que posso colocar na caçamba. Podem me orientar?'
+                  'Olá, Caçambas Brasil! Tenho dúvida sobre o tipo de resíduo que posso colocar na caçamba. Minha cidade e bairro são:'
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -131,7 +139,7 @@ export const WasteComplianceSection: React.FC = () => {
               <div className="flex items-center gap-2.5 pb-4 border-b border-slate-200">
                 <Ban className="w-5 h-5 text-red-700 shrink-0" />
                 <h3 className="text-lg font-bold text-[#0B2545]">
-                  Resíduos Proibidos por Lei
+                  Resíduos Não Aceitos
                 </h3>
               </div>
               <dl className="mt-5 space-y-4">

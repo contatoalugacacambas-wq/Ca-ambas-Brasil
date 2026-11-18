@@ -6,9 +6,10 @@
 import { useState } from 'react';
 import { Header } from './components/Header';
 import { HeroSection } from './components/HeroSection';
-import { DumpsterModels } from './components/DumpsterModels';
 import { WhatsAppQuoteBuilder } from './components/WhatsAppQuoteBuilder';
+import { DumpsterModels } from './components/DumpsterModels';
 import { ProcessSection } from './components/ProcessSection';
+import { GallerySection } from './components/GallerySection';
 import { WasteComplianceSection } from './components/WasteComplianceSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
@@ -24,9 +25,10 @@ export default function App() {
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <DumpsterModels />
         <WhatsAppQuoteBuilder />
+        <DumpsterModels />
         <ProcessSection />
+        <GallerySection />
         <WasteComplianceSection />
         <FaqSection />
       </main>

@@ -23,7 +23,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ activeDoc, onClose }) =>
 
   const titles: Record<Exclude<LegalDocType, null>, string> = {
     privacy: 'Política de Privacidade e Proteção de Dados (LGPD)',
-    terms: 'Termos de Uso e Condições Gerais de Locação',
+    terms: 'Termos de Uso e Condições Gerais de Atendimento',
     company: 'Transparência Empresarial e Dados Cadastrais',
   };
 
@@ -59,43 +59,42 @@ export const LegalModal: React.FC<LegalModalProps> = ({ activeDoc, onClose }) =>
               <p>
                 A <strong>{COMPANY_INFO.legalName}</strong> (nome fantasia{' '}
                 <strong>{COMPANY_INFO.brandName}</strong>), inscrita no CNPJ sob o nº{' '}
-                <span className="font-mono">{COMPANY_INFO.cnpj}</span>, respeita a privacidade dos
-                usuários e atua em conformidade com a Lei Geral de Proteção de Dados Pessoais
+                <span className="font-mono">{COMPANY_INFO.cnpj}</span>, operadora do domínio{' '}
+                <span className="font-mono">{COMPANY_INFO.domain}</span>, respeita a privacidade
+                dos usuários e atua em conformidade com a Lei Geral de Proteção de Dados Pessoais
                 (LGPD – Lei nº 13.709/2018).
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
                 1. Coleta e Finalidade dos Dados
               </h3>
               <p>
-                Os dados eventualmente informados pelo usuário ao iniciar atendimento via WhatsApp,
-                telefone ou formulário de solicitação de orçamento (nome, telefone, e-mail, bairro
-                e endereço de entrega) são utilizados exclusivamente para elaborar cotações,
-                agendar entregas/retiradas de caçambas, emitir Notas Fiscais e gerar o Controle de
-                Transporte de Resíduos (CTR).
+                Os dados informados voluntariamente pelo usuário ao iniciar atendimento via
+                WhatsApp, telefone ou e-mail (como cidade, bairro, nome, telefone e informações
+                sobre a obra) são utilizados para consultar disponibilidade na região, elaborar
+                orçamentos, coordenar entrega e retirada junto ao parceiro local e providenciar
+                documentação fiscal ou operacional aplicável.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
                 2. Compartilhamento e Segurança
               </h3>
               <p>
-                Não comercializamos, alugamos ou cedemos dados pessoais a terceiros para fins de
-                marketing. As informações podem ser compartilhadas apenas quando estritamente
-                necessário para cumprimento de obrigações fiscais, legais ou ambientais junto aos
-                órgãos competentes e áreas de destinação licenciadas.
+                Não comercializamos dados pessoais a terceiros. As informações necessárias para o
+                atendimento podem ser compartilhadas com o parceiro operacional responsável pela
+                região solicitada ou para cumprimento de obrigações legais e fiscais aplicáveis.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
-                3. Cookies e Mensuração de Campanhas
+                3. Cookies e Preferências de Privacidade
               </h3>
               <p>
-                Utilizamos cookies essenciais de funcionamento e, mediante consentimento, métricas
-                básicas de desempenho para avaliar a eficácia dos nossos canais de atendimento.
-                Você pode gerenciar suas preferências de cookies a qualquer momento.
+                Utilizamos cookies essenciais de funcionamento e respeitamos a escolha do usuário
+                quanto a cookies opcionais de mensuração. Nenhum consentimento publicitário é
+                ativado automaticamente sem interação do visitante.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
-                4. Direitos do Titular e Contato do Encarregado
+                4. Direitos do Titular e Contato
               </h3>
               <p>
-                Você pode solicitar confirmação de tratamento, acesso, correção ou eliminação de
-                seus dados pessoais enviando solicitação para{' '}
+                Você pode solicitar acesso, correção ou exclusão de seus dados enviando e-mail para{' '}
                 <a
                   href={`mailto:${COMPANY_INFO.email}`}
                   className="font-medium text-slate-900 underline"
@@ -110,45 +109,42 @@ export const LegalModal: React.FC<LegalModalProps> = ({ activeDoc, onClose }) =>
           {activeDoc === 'terms' && (
             <>
               <p>
-                Estes Termos regulam a contratação dos serviços de locação de caçambas
-                estacionárias prestados por <strong>{COMPANY_INFO.legalName}</strong> (
-                <strong>{COMPANY_INFO.brandName}</strong>), CNPJ{' '}
+                Estes Termos regulam as consultas e solicitações de locação de caçambas
+                estacionárias intermediadas pela central da <strong>{COMPANY_INFO.legalName}</strong>{' '}
+                (<strong>{COMPANY_INFO.brandName}</strong>), CNPJ{' '}
                 <span className="font-mono">{COMPANY_INFO.cnpj}</span>.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
-                1. Objeto e Orçamento
+                1. Rede de Parceiros e Confirmação de Disponibilidade
               </h3>
               <p>
-                Os valores informados pela central de atendimento contemplam a entrega da caçamba
-                no endereço combinado, a permanência pelo prazo contratado e a retirada com
-                destinação ambiental em unidade licenciada. Tarifas específicas variam conforme
-                volume (3m³, 4m³ ou 5m³), tipo de resíduo e localização.
+                O atendimento ocorre por meio de parceiros em diversas regiões do Brasil, sujeito à
+                disponibilidade operacional na cidade e bairro informados. Valores, prazos de
+                permanência, formas de pagamento e documentação aplicável (como Nota Fiscal e
+                CTR/MTR, quando exigidos no município) são confirmados pela central antes do
+                agendamento.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
-                2. Responsabilidade sobre Resíduos e Limite de Carga
+                2. Responsabilidade sobre Resíduos e Limites
               </h3>
               <p>
-                O locatário compromete-se a depositar exclusivamente resíduos da construção civil
-                permitidos, respeitando o nível máximo da borda superior da caçamba. É proibido o
-                descarte de lixo orgânico, produtos químicos, tintas, solventes, pneus, amianto e
-                resíduos hospitalares ou perigosos.
+                O contratante compromete-se a descartar apenas resíduos permitidos e informados no
+                pedido, respeitando o limite da borda superior da caçamba e as orientações de peso
+                confirmadas pela central.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
-                3. Posicionamento e Normas de Trânsito
+                3. Posicionamento e Normas Municipais
               </h3>
               <p>
-                Quando posicionada em via pública, a caçamba deve obedecer à sinalização e às
-                normas municipais de trânsito. Caso o local exija autorização prévia da prefeitura
-                ou taxa de estacionamento rotativo, a responsabilidade pela regularização deve ser
-                verificada antes da entrega.
+                O posicionamento em via pública ou área interna depende de acesso adequado e do
+                cumprimento das normas municipais de trânsito da cidade atendida.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
-                4. Reagendamento e Cancelamento
+                4. Alterações e Cancelamentos
               </h3>
               <p>
-                Alterações de horário ou cancelamentos devem ser comunicados com antecedência pelo
-                WhatsApp <span className="font-mono">{COMPANY_INFO.phoneDisplay}</span> antes da
-                saída do caminhão da base operacional.
+                Alterações de endereço, data ou cancelamentos devem ser solicitados com
+                antecedência pelo WhatsApp <span className="font-mono">{COMPANY_INFO.phoneDisplay}</span>.
               </p>
             </>
           )}
@@ -156,9 +152,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ activeDoc, onClose }) =>
           {activeDoc === 'company' && (
             <>
               <p>
-                Para sua segurança e em cumprimento às diretrizes de transparência comercial e
-                publicidade responsável, apresentamos os dados oficiais da empresa operadora deste
-                site:
+                Dados oficiais da empresa responsável pela central de atendimento da{' '}
+                <strong>{COMPANY_INFO.brandName}</strong>:
               </p>
               <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 space-y-2 font-mono text-xs sm:text-sm text-slate-800">
                 <p>
@@ -171,20 +166,20 @@ export const LegalModal: React.FC<LegalModalProps> = ({ activeDoc, onClose }) =>
                   <span className="text-slate-500">CNPJ:</span> {COMPANY_INFO.cnpj}
                 </p>
                 <p>
+                  <span className="text-slate-500">Domínio Oficial:</span> {COMPANY_INFO.domain}
+                </p>
+                <p>
                   <span className="text-slate-500">Telefone / WhatsApp:</span>{' '}
                   {COMPANY_INFO.phoneInternational}
                 </p>
                 <p>
                   <span className="text-slate-500">E-mail:</span> {COMPANY_INFO.email}
                 </p>
-                <p>
-                  <span className="text-slate-500">Horário Comercial:</span>{' '}
-                  {COMPANY_INFO.hoursWeek} · {COMPANY_INFO.hoursSaturday}
-                </p>
               </div>
               <p>
-                Todas as locações contam com emissão de Nota Fiscal de serviço e encaminhamento de
-                resíduos para locais ambientalmente autorizados.
+                Atendimento realizado por rede de parceiros conforme disponibilidade na cidade
+                solicitada. Condições comerciais e documentação são informadas pela central antes
+                da confirmação do pedido.
               </p>
             </>
           )}

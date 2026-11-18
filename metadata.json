@@ -1,6 +1,6 @@
 {
   "name": "Caçambas Brasil",
-  "description": "Locação de caçambas estacionárias de entulho de 3m³, 4m³ e 5m³ com entrega programada, Nota Fiscal e descarte legal. Atendimento direto pelo WhatsApp.",
+  "description": "Aluguel de caçamba de entulho de 3m³, 4m³ e 5m³ com atendimento via rede de parceiros em diversas regiões do Brasil. Consulte preço e disponibilidade pelo WhatsApp.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
