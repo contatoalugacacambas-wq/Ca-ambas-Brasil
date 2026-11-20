@@ -35,7 +35,7 @@ export const CookieBanner: React.FC<CookieBannerProps> = ({ onOpenPrivacy }) => 
   return (
     <aside
       aria-label="Aviso de privacidade e cookies"
-      className="fixed bottom-[4.75rem] md:bottom-5 left-3 right-3 md:left-4 md:right-auto md:max-w-md z-50 rounded-xl bg-white border border-slate-200 shadow-lg px-3.5 py-2.5 text-xs text-slate-600 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5"
+      className="fixed bottom-20 left-3 right-3 md:bottom-6 md:left-6 md:right-auto md:max-w-md z-50 rounded-xl bg-white border border-slate-200 shadow-lg px-3.5 py-2.5 text-xs text-slate-600 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5"
     >
       <p className="leading-snug">
         Usamos cookies essenciais (LGPD).{' '}

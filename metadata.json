@@ -1,6 +1,6 @@
 {
   "name": "Caçambas Brasil",
-  "description": "Aluguel de caçamba de entulho de 3m³, 4m³ e 5m³ com atendimento via rede de parceiros em diversas regiões do Brasil. Consulte preço e disponibilidade pelo WhatsApp.",
+  "description": "Locação de caçambas para entulho de 3m³ até 10m³ com entrega rápida no local e períodos de 1 dia, 2 dias, 3 dias, semanal ou mensal. Solicite orçamento no WhatsApp.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

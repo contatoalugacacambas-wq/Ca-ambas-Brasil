@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { COMPANY_INFO, buildWhatsAppUrl } from '../data/siteConfig';
+import { buildWhatsAppUrl } from '../data/siteConfig';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
 export const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const headerWhatsAppUrl = buildWhatsAppUrl(
-    'Olá, Caçambas Brasil! Vim pelo site e quero um orçamento de caçamba de entulho. Minha cidade e bairro são:'
+    'Olá! Vim pelo site da Caçambas Brasil e quero solicitar um orçamento de caçamba para entulho. Minha cidade e bairro:'
   );
 
   const navLinks = [
     { href: '#orcamento', label: 'Orçamento' },
-    { href: '#modelos', label: 'Tamanhos' },
-    { href: '#como-funciona', label: 'Como Funciona' },
-    { href: '#residuos', label: 'Resíduos' },
+    { href: '#modelos', label: '3m³ até 10m³' },
+    { href: '#como-funciona', label: 'Entrega 1h–2h' },
+    { href: '#residuos', label: 'Entulho' },
     { href: '#duvidas', label: 'Dúvidas' },
   ];
 
@@ -51,11 +51,11 @@ export const Header: React.FC = () => {
             href={headerWhatsAppUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-[#0B2545] text-xs sm:text-sm font-extrabold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-yellow-400 hover:bg-yellow-300 text-[#0B2545] text-xs sm:text-sm font-extrabold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-400"
           >
             <WhatsAppIcon className="w-4 h-4 shrink-0" />
-            <span className="sm:hidden">WhatsApp</span>
-            <span className="hidden sm:inline">Orçamento WhatsApp</span>
+            <span className="sm:hidden">Solicitar Agora</span>
+            <span className="hidden sm:inline">Solicitar Orçamento</span>
           </a>
 
           <button
@@ -85,8 +85,17 @@ export const Header: React.FC = () => {
               {link.label}
             </a>
           ))}
-          <div className="pt-2 border-t border-blue-900 text-xs font-mono text-blue-200 px-3">
-            Central: {COMPANY_INFO.phoneDisplay}
+          <div className="pt-2 border-t border-blue-900 px-3">
+            <a
+              href={headerWhatsAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#16A34A] hover:bg-[#15803D] text-white text-sm font-extrabold transition-colors"
+            >
+              <WhatsAppIcon className="w-4 h-4 shrink-0" />
+              <span>Solicitar Orçamento no WhatsApp</span>
+            </a>
           </div>
         </nav>
       )}

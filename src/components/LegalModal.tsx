@@ -23,7 +23,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ activeDoc, onClose }) =>
 
   const titles: Record<Exclude<LegalDocType, null>, string> = {
     privacy: 'Política de Privacidade e Proteção de Dados (LGPD)',
-    terms: 'Termos de Uso e Condições Gerais de Atendimento',
+    terms: 'Termos de Uso e Locação de Caçambas',
     company: 'Transparência Empresarial e Dados Cadastrais',
   };
 
@@ -69,26 +69,24 @@ export const LegalModal: React.FC<LegalModalProps> = ({ activeDoc, onClose }) =>
               </h3>
               <p>
                 Os dados informados voluntariamente pelo usuário ao iniciar atendimento via
-                WhatsApp, telefone ou e-mail (como cidade, bairro, nome, telefone e informações
-                sobre a obra) são utilizados para consultar disponibilidade na região, elaborar
-                orçamentos, coordenar entrega e retirada junto ao parceiro local e providenciar
-                documentação fiscal ou operacional aplicável.
+                WhatsApp ou e-mail (como cidade, bairro, endereço da obra, tamanho e período da
+                caçamba) são utilizados exclusivamente para calcular o orçamento, confirmar a entrega
+                no local e providenciar documentação fiscal aplicável.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
                 2. Compartilhamento e Segurança
               </h3>
               <p>
-                Não comercializamos dados pessoais a terceiros. As informações necessárias para o
-                atendimento podem ser compartilhadas com o parceiro operacional responsável pela
-                região solicitada ou para cumprimento de obrigações legais e fiscais aplicáveis.
+                Não comercializamos dados pessoais a terceiros. As informações fornecidas são
+                tratadas apenas para execução do atendimento solicitado e cumprimento de obrigações
+                legais.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
                 3. Cookies e Preferências de Privacidade
               </h3>
               <p>
                 Utilizamos cookies essenciais de funcionamento e respeitamos a escolha do usuário
-                quanto a cookies opcionais de mensuração. Nenhum consentimento publicitário é
-                ativado automaticamente sem interação do visitante.
+                quanto a cookies opcionais de mensuração.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
                 4. Direitos do Titular e Contato
@@ -100,8 +98,8 @@ export const LegalModal: React.FC<LegalModalProps> = ({ activeDoc, onClose }) =>
                   className="font-medium text-slate-900 underline"
                 >
                   {COMPANY_INFO.email}
-                </a>{' '}
-                ou pelo telefone <span className="font-mono">{COMPANY_INFO.phoneDisplay}</span>.
+                </a>
+                .
               </p>
             </>
           )}
@@ -109,42 +107,32 @@ export const LegalModal: React.FC<LegalModalProps> = ({ activeDoc, onClose }) =>
           {activeDoc === 'terms' && (
             <>
               <p>
-                Estes Termos regulam as consultas e solicitações de locação de caçambas
-                estacionárias intermediadas pela central da <strong>{COMPANY_INFO.legalName}</strong>{' '}
-                (<strong>{COMPANY_INFO.brandName}</strong>), CNPJ{' '}
-                <span className="font-mono">{COMPANY_INFO.cnpj}</span>.
+                Estes Termos regulam a locação de caçambas estacionárias para entulho atendida pela{' '}
+                <strong>{COMPANY_INFO.legalName}</strong> (<strong>{COMPANY_INFO.brandName}</strong>
+                ), CNPJ <span className="font-mono">{COMPANY_INFO.cnpj}</span>.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
-                1. Rede de Parceiros e Confirmação de Disponibilidade
+                1. Tamanhos, Períodos e Entrega Rápida
               </h3>
               <p>
-                O atendimento ocorre por meio de parceiros em diversas regiões do Brasil, sujeito à
-                disponibilidade operacional na cidade e bairro informados. Valores, prazos de
-                permanência, formas de pagamento e documentação aplicável (como Nota Fiscal e
-                CTR/MTR, quando exigidos no município) são confirmados pela central antes do
-                agendamento.
+                Disponibilizamos opções de 3m³ até 10m³ para períodos de 1 dia, 2 dias, 3 dias,
+                semanal ou mensal. Valores, prazos de entrega (como entrega de 1h a 2h conforme
+                disponibilidade local) e condições são confirmados via WhatsApp antes da entrega.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
-                2. Responsabilidade sobre Resíduos e Limites
+                2. Carregamento e Posicionamento
               </h3>
               <p>
-                O contratante compromete-se a descartar apenas resíduos permitidos e informados no
-                pedido, respeitando o limite da borda superior da caçamba e as orientações de peso
-                confirmadas pela central.
+                O carregamento deve respeitar o limite da borda superior da caçamba para transporte
+                seguro. O posicionamento em via pública ou área interna segue as regras de acesso e
+                trânsito da cidade atendida.
               </p>
               <h3 className="text-base font-bold text-slate-900 pt-1">
-                3. Posicionamento e Normas Municipais
+                3. Alterações e Cancelamentos
               </h3>
               <p>
-                O posicionamento em via pública ou área interna depende de acesso adequado e do
-                cumprimento das normas municipais de trânsito da cidade atendida.
-              </p>
-              <h3 className="text-base font-bold text-slate-900 pt-1">
-                4. Alterações e Cancelamentos
-              </h3>
-              <p>
-                Alterações de endereço, data ou cancelamentos devem ser solicitados com
-                antecedência pelo WhatsApp <span className="font-mono">{COMPANY_INFO.phoneDisplay}</span>.
+                Solicitações de troca, retirada antecipada, alteração de endereço ou cancelamento
+                devem ser informadas pelo canal oficial de WhatsApp da {COMPANY_INFO.brandName}.
               </p>
             </>
           )}
@@ -152,8 +140,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ activeDoc, onClose }) =>
           {activeDoc === 'company' && (
             <>
               <p>
-                Dados oficiais da empresa responsável pela central de atendimento da{' '}
-                <strong>{COMPANY_INFO.brandName}</strong>:
+                Dados oficiais da empresa operadora da <strong>{COMPANY_INFO.brandName}</strong>:
               </p>
               <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 space-y-2 font-mono text-xs sm:text-sm text-slate-800">
                 <p>
@@ -169,17 +156,12 @@ export const LegalModal: React.FC<LegalModalProps> = ({ activeDoc, onClose }) =>
                   <span className="text-slate-500">Domínio Oficial:</span> {COMPANY_INFO.domain}
                 </p>
                 <p>
-                  <span className="text-slate-500">Telefone / WhatsApp:</span>{' '}
-                  {COMPANY_INFO.phoneInternational}
-                </p>
-                <p>
                   <span className="text-slate-500">E-mail:</span> {COMPANY_INFO.email}
                 </p>
               </div>
               <p>
-                Atendimento realizado por rede de parceiros conforme disponibilidade na cidade
-                solicitada. Condições comerciais e documentação são informadas pela central antes
-                da confirmação do pedido.
+                Atendimento de locação de caçambas para entulho de 3m³ até 10m³ com solicitação
+                direta via WhatsApp no site.
               </p>
             </>
           )}
